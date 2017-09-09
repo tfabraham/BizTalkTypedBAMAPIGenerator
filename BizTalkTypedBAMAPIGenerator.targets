@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  BizTalk Typed BAM API Generator
+  Copyright (C) 2008-Present Thomas F. Abraham. All Rights Reserved.
+  Copyright (c) 2007 Darren Jefford. All Rights Reserved.
+  Licensed under the MIT License. See License.txt in the project root.
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build;PackageMain">
+  <PropertyGroup>
+    <Version>2_2</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Main Include="License.txt" />
+    <Main Include="docs\GenerateTypedBamApiGuide.pdf" />
+    <Main Include="src\ExportBAMDefinitionXML\bin\x86\release\ExportBamDefinitionXml.exe" />
+    <Main Include="src\GenerateTypedBamApi\bin\x86\release\GenerateTypedBamApi.exe" />
+    <Main Include="src\ExportBAMDefinitionXML\bin\x64\release\ExportBamDefinitionXml.exe" />
+    <Main Include="src\GenerateTypedBamApi\bin\x64\release\GenerateTypedBamApi.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Stage Include="License.txt" />
+    <Stage Include="..\temp\GenerateTypedBamApiGuide.pdf" />
+    <Stage Include="..\temp\x86\ExportBamDefinitionXml.exe" />
+    <Stage Include="..\temp\x86\GenerateTypedBamApi.exe" />
+    <Stage Include="..\temp\x64\ExportBamDefinitionXml.exe" />
+    <Stage Include="..\temp\x64\GenerateTypedBamApi.exe" />
+  </ItemGroup>
+
+  <Target Name="Build">
+    <MSBuild Projects="src\ExportBamDefinitionXml.sln" Properties="Configuration=Release;Platform=x86" Targets="Rebuild" />
+    <MSBuild Projects="src\GenerateTypedBamApi.sln" Properties="Configuration=Release;Platform=x86" Targets="Rebuild" />
+    <MSBuild Projects="src\ExportBamDefinitionXml.sln" Properties="Configuration=Release;Platform=x64" Targets="Rebuild" />
+    <MSBuild Projects="src\GenerateTypedBamApi.sln" Properties="Configuration=Release;Platform=x64" Targets="Rebuild" />
+  </Target>
+
+  <Target Name="PackageMain">
+    <Delete Files="Staging\BizTalkTypedBAMAPIGeneratorV$(Version).zip" />
+    <RemoveDir Directories="..\temp" />
+    <Copy SourceFiles="@(Main)" DestinationFiles="@(Stage)" />
+    <Exec Command="tools\7za a -r -tzip Staging\BizTalkTypedBAMAPIGeneratorV$(Version).zip ..\temp\*" />
+  </Target>
+</Project>
