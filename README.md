@@ -59,6 +59,7 @@ itin.EndItineraryActivity();
 
 ## License
 
-Copyright (c) Thomas F. Abraham. All rights reserved.
+Copyright (c) 2008-Present Thomas F. Abraham. All Rights Reserved.
+Copyright (c) 2007 Darren Jefford. All Rights Reserved.
 
 Licensed under the [MIT](LICENSE.txt) License.
