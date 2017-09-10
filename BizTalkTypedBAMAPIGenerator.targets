@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Stage Include="License.txt" />
+    <Stage Include="..\temp\License.txt" />
     <Stage Include="..\temp\GenerateTypedBamApiGuide.pdf" />
     <Stage Include="..\temp\x86\ExportBamDefinitionXml.exe" />
     <Stage Include="..\temp\x86\GenerateTypedBamApi.exe" />
