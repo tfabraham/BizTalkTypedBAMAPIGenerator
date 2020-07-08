@@ -1,3 +1,9 @@
+## Version 2.3 (7/8/2020)
+
+Changes in this release:
+
+* CHANGE: Updated minimum .NET Framework to v4.5
+
 ## Version 2.2 (11/17/2011)
 
 Changes in this release:
