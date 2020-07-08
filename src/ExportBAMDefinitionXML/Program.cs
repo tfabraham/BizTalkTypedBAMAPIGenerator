@@ -66,8 +66,8 @@ namespace ExportBamDefinitionXml
             Console.WriteLine(
                 "BizTalk BAM Definition XML Exporter "
                 + assemblyVersion.Major + "." + assemblyVersion.Minor + "." + assemblyVersion.Build);
-            Console.WriteLine("[http://GenerateTypedBamApi.codeplex.com/]");
-            Console.WriteLine("Copyright (C) 2007-08 Darren Jefford and 2008-10 Thomas F. Abraham");
+            Console.WriteLine("[https://github.com/tfabraham/BizTalkTypedBAMAPIGenerator/]");
+            Console.WriteLine("Copyright (C) 2007-08 Darren Jefford and 2008-20 Thomas F. Abraham");
             Console.WriteLine();
 
             Console.ResetColor();
