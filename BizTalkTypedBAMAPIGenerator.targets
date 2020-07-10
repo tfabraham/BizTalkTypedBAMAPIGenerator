@@ -7,7 +7,7 @@
 -->
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build;PackageMain">
   <PropertyGroup>
-    <Version>2_2</Version>
+    <Version>2_3</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,12 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Stage Include="..\temp\License.txt" />
-    <Stage Include="..\temp\GenerateTypedBamApiGuide.pdf" />
-    <Stage Include="..\temp\x86\ExportBamDefinitionXml.exe" />
-    <Stage Include="..\temp\x86\GenerateTypedBamApi.exe" />
-    <Stage Include="..\temp\x64\ExportBamDefinitionXml.exe" />
-    <Stage Include="..\temp\x64\GenerateTypedBamApi.exe" />
+    <Stage Include=".\temp\License.txt" />
+    <Stage Include=".\temp\GenerateTypedBamApiGuide.pdf" />
+    <Stage Include=".\temp\x86\ExportBamDefinitionXml.exe" />
+    <Stage Include=".\temp\x86\GenerateTypedBamApi.exe" />
+    <Stage Include=".\temp\x64\ExportBamDefinitionXml.exe" />
+    <Stage Include=".\temp\x64\GenerateTypedBamApi.exe" />
   </ItemGroup>
 
   <Target Name="Build">
@@ -37,8 +37,8 @@
 
   <Target Name="PackageMain">
     <Delete Files="Staging\BizTalkTypedBAMAPIGeneratorV$(Version).zip" />
-    <RemoveDir Directories="..\temp" />
+    <RemoveDir Directories=".\temp" />
     <Copy SourceFiles="@(Main)" DestinationFiles="@(Stage)" />
-    <Exec Command="tools\7za a -r -tzip Staging\BizTalkTypedBAMAPIGeneratorV$(Version).zip ..\temp\*" />
+    <Exec Command="tools\7za a -r -tzip Staging\BizTalkTypedBAMAPIGeneratorV$(Version).zip .\temp\*" />
   </Target>
 </Project>

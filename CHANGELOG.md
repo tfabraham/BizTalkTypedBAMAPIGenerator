@@ -1,3 +1,10 @@
+## Version 2.3 (7/9/2020)
+
+Changes in this release:
+
+* CHANGE: Require .NET Framework 4.5 or newer
+* CHANGE: Minor doc updates
+
 ## Version 2.2 (11/17/2011)
 
 Changes in this release:
