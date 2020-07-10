@@ -289,3 +289,4 @@ __pycache__/
 
 # BizTalk Typed BAM API Generator
 Staging/
+Temp/
