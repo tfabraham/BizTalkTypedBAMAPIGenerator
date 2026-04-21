@@ -1,3 +1,5 @@
+### With Microsoft BizTalk Server reaching end-of-life, this utility is no longer being maintained.
+
 # BizTalk Typed BAM API Generator
 The GenerateTypedBamApi command line tool enables you to take a BizTalk BAM Observation model represented as a Excel Spreadsheet and generate a set of strongly typed C# classes which you can then use to create and populate BAM Activities.
 
